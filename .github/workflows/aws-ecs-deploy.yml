@@ -6,11 +6,11 @@ on:
 
 env:
   AWS_REGION: us-east-1
-  ECR_REPOSITORY: 33tier-backend  # Your ECR repository name
+  ECR_REPOSITORY: 3tier-backend  # Your ECR repository name
   ECS_SERVICE: backend-task-service
   ECS_CLUSTER: backend-cluster
   ECS_TASK_DEFINITION: backend-task
-  CONTAINER_NAME: 33tier-backend
+  CONTAINER_NAME: 3tier-backend
 
 permissions:
   contents: read
