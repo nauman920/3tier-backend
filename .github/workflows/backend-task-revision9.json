@@ -1,0 +1,109 @@
+{
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:920373034359:task-definition/backend-task:9",
+    "containerDefinitions": [
+        {
+            "name": "backend",
+            "image": "920373034359.dkr.ecr.us-east-1.amazonaws.com/backend:latest",
+            "cpu": 512,
+            "memory": 1024,
+            "memoryReservation": 1024,
+            "portMappings": [
+                {
+                    "name": "backend-5000-tcp",
+                    "containerPort": 5000,
+                    "hostPort": 5000,
+                    "protocol": "tcp",
+                    "appProtocol": "http"
+                }
+            ],
+            "essential": true,
+            "environment": [
+                {
+                    "name": "PORT",
+                    "value": "5000"
+                },
+                {
+                    "name": "MONGODB_URI",
+                    "value": "mongodb+srv://admin11:admin11@cluster0.sc1ffg4.mongodb.net/"
+                }
+            ],
+            "environmentFiles": [],
+            "mountPoints": [],
+            "volumesFrom": [],
+            "ulimits": [],
+            "logConfiguration": {
+                "logDriver": "awslogs",
+                "options": {
+                    "awslogs-group": "/ecs/backend-task",
+                    "mode": "non-blocking",
+                    "awslogs-create-group": "true",
+                    "max-buffer-size": "25m",
+                    "awslogs-region": "us-east-1",
+                    "awslogs-stream-prefix": "ecs"
+                },
+                "secretOptions": []
+            },
+            "systemControls": []
+        }
+    ],
+    "family": "backend-task",
+    "taskRoleArn": "arn:aws:iam::920373034359:role/ecsTaskExecutionRole",
+    "executionRoleArn": "arn:aws:iam::920373034359:role/ecsTaskExecutionRole",
+    "networkMode": "awsvpc",
+    "revision": 9,
+    "volumes": [],
+    "status": "ACTIVE",
+    "requiresAttributes": [
+        {
+            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
+        },
+        {
+            "name": "ecs.capability.execution-role-awslogs"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.ecr-auth"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.28"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.21"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.task-iam-role"
+        },
+        {
+            "name": "ecs.capability.execution-role-ecr-pull"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
+        },
+        {
+            "name": "ecs.capability.task-eni"
+        },
+        {
+            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
+        }
+    ],
+    "placementConstraints": [],
+    "compatibilities": [
+        "EC2",
+        "FARGATE"
+    ],
+    "requiresCompatibilities": [
+        "FARGATE"
+    ],
+    "cpu": "512",
+    "memory": "1024",
+    "runtimePlatform": {
+        "cpuArchitecture": "X86_64",
+        "operatingSystemFamily": "LINUX"
+    },
+    "registeredAt": "2025-05-22T07:46:43.795Z",
+    "registeredBy": "arn:aws:iam::920373034359:user/nauman",
+    "enableFaultInjection": false,
+    "tags": []
+}
